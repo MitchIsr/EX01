@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6EB8F67-B750-48C5-AAEC-9F6131663C2F}|Ex01_01.2.csproj|c:\\users\\mihim\\source\\repos\\ex01_01.2\\binarynumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6EB8F67-B750-48C5-AAEC-9F6131663C2F}|Ex01_01.2.csproj|solutionrelative:binarynumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|NewFolder1{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\BinaryNumberUtilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|NewFolder1{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}|solutionrelative:BinaryNumberUtilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BinaryNumberUtilities.cs",
+              "DocumentMoniker": "C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\BinaryNumberUtilities.cs",
+              "RelativeDocumentMoniker": "BinaryNumberUtilities.cs",
+              "ToolTip": "C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\BinaryNumberUtilities.cs",
+              "RelativeToolTip": "BinaryNumberUtilities.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T20:49:09.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BinaryNumber.cs",
+              "DocumentMoniker": "C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\BinaryNumber.cs",
+              "RelativeDocumentMoniker": "BinaryNumber.cs",
+              "ToolTip": "C:\\Users\\Mihim\\source\\repos\\Ex01_01.2\\BinaryNumber.cs",
+              "RelativeToolTip": "BinaryNumber.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T17:51:03.684Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

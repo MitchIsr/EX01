@@ -1,8 +1,0 @@
-C:\Users\Mihim\source\repos\Ex01_01.2\bin\Debug\Ex01_01.2.exe.config
-C:\Users\Mihim\source\repos\Ex01_01.2\bin\Debug\Ex01_01.2.exe
-C:\Users\Mihim\source\repos\Ex01_01.2\bin\Debug\Ex01_01.2.pdb
-C:\Users\Mihim\source\repos\Ex01_01.2\obj\Debug\Ex01_01.2.csproj.AssemblyReference.cache
-C:\Users\Mihim\source\repos\Ex01_01.2\obj\Debug\Ex01_01.2.csproj.CoreCompileInputs.cache
-C:\Users\Mihim\source\repos\Ex01_01.2\obj\Debug\Ex01_01.2.exe
-C:\Users\Mihim\source\repos\Ex01_01.2\obj\Debug\Ex01_01.2.pdb
-C:\Users\Mihim\source\repos\Ex01_01.2\obj\Debug\Ex01_01.2.exe.config

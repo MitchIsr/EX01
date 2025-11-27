@@ -1,0 +1,32 @@
+## Visual Studio / C# ignore rules
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+.vs/
+.vscode/
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Logs and temp
+*.log
+*.tmp
+*.tmp_proj
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db

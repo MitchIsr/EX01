@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Ex01_01_Utilities;
 namespace Ex01_01
 {
@@ -92,12 +93,14 @@ namespace Ex01_01
         public void PrintBinary()
         {
             string l_Output = @" (";
+            StringBuilder l_Builder = new StringBuilder();
+            l_Builder.Append(l_Output);
             for (int i = m_BinaryNum.Length - 1; i >= 0; i--)
             {
-                l_Output = string.Concat(l_Output, m_BinaryNum[i].ToString());
+                l_Builder.Append(m_BinaryNum[i].ToString());
             }
-            l_Output = string.Concat(l_Output, ") ");
-            Console.Write(l_Output);
+            l_Builder.Append( ") ");
+            Console.Write(l_Builder.ToString());
 
         }
         static void PrintBinaryNumber(int[,] i_Binary_Numbers, int row)

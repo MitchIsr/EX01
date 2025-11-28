@@ -7,17 +7,17 @@ namespace ProgramStart
     {
         public static void StartProgram()
         {
-            string Output = @"Hello, Welcome to Ex01_05 Numbers Statistics
+            string l_Output = @"Hello, Welcome to Ex01_05 Numbers Statistics
 Please Enter a Number With a length of 7:";
-            Console.WriteLine(Output);
+            Console.WriteLine(l_Output);
             NumberStatistics l_Numberinput = new NumberStatistics();
             bool f_isInputValid = false;
             while (f_isInputValid == false)
             {
-                string input = Console.ReadLine();
+                string l_input = Console.ReadLine();
                 try
                 {
-                    l_Numberinput = NumberStatistics.Parse(input);
+                    l_Numberinput = NumberStatistics.Parse(l_input);
                     f_isInputValid = true;
                 }
                 catch (Exception l_invalidinput)

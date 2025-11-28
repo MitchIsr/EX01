@@ -21,22 +21,22 @@ namespace Ex01_02
             //  Print the leaves:
             for (int l_CurrentTreeRow = 0; l_CurrentTreeRow < l_LeavesHeight; l_CurrentTreeRow++)
             {
-                char rowLetter = (char)('A' + l_CurrentTreeRow);
-                Console.Write(rowLetter + " ");
+                char l_rowLetter = (char)('A' + l_CurrentTreeRow);
+                Console.Write(l_rowLetter + " ");
 
-                int numbersInRow = 2 * l_CurrentTreeRow + 1;
-                int spacesBefore = (l_LeavesHeight - 1 - l_CurrentTreeRow) * 2;
+                int l_NumbersInRow = 2 * l_CurrentTreeRow + 1;
+                int l_SpacesBefore = (l_LeavesHeight - 1 - l_CurrentTreeRow) * 2;
 
-                Console.Write(new string(' ', spacesBefore));
+                Console.Write(new string(' ', l_SpacesBefore));
 
-                for (int i = 0; i < numbersInRow; i++)
+                for (int i = 0; i < l_NumbersInRow; i++)
                 {
                     Console.Write(l_CurrentNumber);
                     Console.Write(' ');
 
-                    if (i == numbersInRow - 1)
+                    if (i == l_NumbersInRow - 1)
                     {
-                        Console.Write("\n");
+                        Console.WriteLine();
                     }
 
                     l_CurrentNumber++;
@@ -48,15 +48,15 @@ namespace Ex01_02
             }
 
             // Print the trunk:
-            int trunkSpaces = 2 * l_LeavesHeight - 3;
+            int l_trunkSpaces = 2 * l_LeavesHeight - 3;
 
             for (int l_CurrentTrunkRow = 0; l_CurrentTrunkRow < k_TrunkHeight; l_CurrentTrunkRow++)
             {
-                int rowIndex = l_LeavesHeight + l_CurrentTrunkRow;
-                char rowLetter = (char)('A' + rowIndex);
+                int l_rowIndex = l_LeavesHeight + l_CurrentTrunkRow;
+                char l_rowLetter = (char)('A' + l_rowIndex);
 
-                Console.Write(rowLetter + " ");
-                Console.Write(new string(' ', trunkSpaces));
+                Console.Write(l_rowLetter + " ");
+                Console.Write(new string(' ', l_trunkSpaces));
                 Console.WriteLine("|" + l_CurrentNumber + "|");
             }
         }

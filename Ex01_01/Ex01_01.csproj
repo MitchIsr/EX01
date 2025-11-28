@@ -37,12 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryNumber.cs" />
-    <Compile Include="main.cs" />
-<<<<<<< HEAD
-    <Compile Include="EX01_01_Utilities\BinaryNumberUtilities.cs" />
-=======
     <Compile Include="BinaryNumberUtilities.cs" />
->>>>>>> d4209f62839b014b0e8ce1afdae1316a37c04fe0
+    <Compile Include="main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

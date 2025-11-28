@@ -1,11 +1,11 @@
 ﻿using System;
 using NumberStats;
 
-namespace Project1
+namespace ProgramStart
 {
-    class main
+    class NumberStatisticsProgram
     {
-        static void Main()
+        public static void StartProgram()
         {
             string Output = @"Hello, Welcome to Ex01_05 Numbers Statistics
 Please Enter a Number With a length of 7:";

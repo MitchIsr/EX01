@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace NumberStats
 {
     class NumberStatistics

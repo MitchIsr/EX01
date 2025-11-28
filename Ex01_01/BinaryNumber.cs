@@ -207,7 +207,7 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
                     }
                 }
             }
-            utils.quickSort( l_BinaryNumberArray, 0, l_BinaryNumberArray.Length - 1);
+            BinaryNumberUtilities.quickSort( l_BinaryNumberArray, 0, l_BinaryNumberArray.Length - 1);
             Output = "Decimal numbers in ascending order: ";
             Console.Write(Output);
             for (int i = 0; i < 3; i++)
@@ -220,17 +220,17 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
                 }
                 
             }
-            float l_BinaryNumbersAverage =  utils.Avg(l_BinaryNumberArray[0], l_BinaryNumberArray[1], l_BinaryNumberArray[2]);
+            float l_BinaryNumbersAverage = BinaryNumberUtilities.Avg(l_BinaryNumberArray[0], l_BinaryNumberArray[1], l_BinaryNumberArray[2]);
             Console.WriteLine();
             Output = $@"Average: {l_BinaryNumbersAverage}";
             Console.WriteLine(Output);
-            utils.FindShortestBitSequence(l_BinaryNumberArray);
+            BinaryNumberUtilities.FindShortestBitSequence(l_BinaryNumberArray);
             Console.WriteLine();
-            utils.PrintPalindromesOfBinary(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintPalindromesOfBinary(l_BinaryNumberArray);
             Console.WriteLine();
-            utils.PrintMaxDifferenceBinary(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintMaxDifferenceBinary(l_BinaryNumberArray);
             Console.WriteLine();
-            utils.PrintNumbersThatStartAndEndWithSameDigit(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintNumbersThatStartAndEndWithSameDigit(l_BinaryNumberArray);
             Console.WriteLine();
 
 

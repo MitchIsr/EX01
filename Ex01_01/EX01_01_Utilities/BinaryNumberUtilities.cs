@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Ex01_01;
 namespace Ex01_01_Utilities
 {
-   public class utils
-   {
+   public class BinaryNumberUtilities
+    {
         public static float Avg(BinaryNumber i_binaryNumber1, BinaryNumber i_binaryNumber2, BinaryNumber i_binaryNumber3)
         {
             int l_BinaryNumber1Dec = i_binaryNumber1.GetNumericValue();

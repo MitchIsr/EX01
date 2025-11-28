@@ -98,6 +98,7 @@ namespace Ex01_01
             }
             l_Output = string.Concat(l_Output,") ");
             Console.Write(l_Output);
+           
         }
         static void PrintBinaryNumber(int[,] i_Binary_Numbers, int row)
         {
@@ -141,6 +142,41 @@ namespace Ex01_01
             }
             return l_MinimumSequence;
         }
+
+        public bool IsPalindrome()
+        {
+            bool l_flag = true;
+            for (int i = 0, j = 7; i < 4; i++, j--) 
+            {
+                if (GetBinaryDigit(i) != GetBinaryDigit(j))
+                {
+                    l_flag = false;
+                }
+            }
+            return l_flag;
+        }
+        public int Get1sAnd0sDifference()
+        {
+            int l_1sCounter = 0;
+            int l_0sCounter = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                if(GetBinaryDigit(i)== 1)
+                {
+                    l_1sCounter++;
+                }
+                else
+                {
+                    l_0sCounter++;
+                }
+
+            }
+            return l_1sCounter > l_0sCounter ? l_1sCounter - l_0sCounter : l_0sCounter - l_1sCounter;
+        }
+        public bool IsStartAndEndWithSameDigit()
+        {
+            return GetBinaryDigit(0) == GetBinaryDigit(7); 
+        }
     }
 
    
@@ -149,7 +185,7 @@ namespace Ex01_01
         static void Main()
         {
             BinaryNumber[] l_BinaryNumberArray = new BinaryNumber[3];
-        
+    
             string Output = @"Hello, Welcome to Ex_01_01 Binary Sequences
 Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
             Console.WriteLine(Output);
@@ -189,6 +225,15 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
             Output = $@"Average: {l_BinaryNumbersAverage}";
             Console.WriteLine(Output);
             utils.FindShortestBitSequence(l_BinaryNumberArray);
+            Console.WriteLine();
+            utils.PrintPalindromesOfBinary(l_BinaryNumberArray);
+            Console.WriteLine();
+            utils.PrintMaxDifferenceBinary(l_BinaryNumberArray);
+            Console.WriteLine();
+            utils.PrintNumbersThatStartAndEndWithSameDigit(l_BinaryNumberArray);
+            Console.WriteLine();
+
+
         }
     }
 }

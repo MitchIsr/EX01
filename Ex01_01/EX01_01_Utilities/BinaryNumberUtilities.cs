@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Ex01_01;
 namespace Ex01_01_Utilities
 {
@@ -63,19 +64,106 @@ namespace Ex01_01_Utilities
             string l_Output = $@"Shortest bit sequence: {l_MinimumSequence} ";
             Console.Write(l_Output);
 
+            int l_ShortSequenceCounter = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                if (l_LengthOfBitSequenceBinNumberArray[i] == l_MinimumSequence)
+                {
+                    l_ShortSequenceCounter++;
+                }
+            }
+
             for (int i = 0; i < 3; i++)
             {
                 if (l_LengthOfBitSequenceBinNumberArray[i] == l_MinimumSequence)
                 {
                     i_BinaryNumbersArray[i].PrintBinary();
-                    if (i < 2)
+                    if (i < l_ShortSequenceCounter-1)
                     {
                         Console.Write(", ");
                     }
                 }
 
             }
+        }
+        public static void PrintPalindromesOfBinary(BinaryNumber[] i_BinaryNumbersArray)
+        {
+            int l_PalindromeCounter = 0, l_i = 0; ;
+            List<BinaryNumber> l_ListOfBinaryPalindromes = new List<BinaryNumber>();
+            for(int i =0;i<3;i++)
+            {
+                if(i_BinaryNumbersArray[i].IsPalindrome())
+                {
+                    l_PalindromeCounter++;
+                    l_ListOfBinaryPalindromes.Add(i_BinaryNumbersArray[i]);
+                }
+            }
+ 
+            string l_output = $@"Number of Palindromes : {l_PalindromeCounter} ";
+            Console.Write(l_output);
 
+            foreach (BinaryNumber l_Node in l_ListOfBinaryPalindromes)
+            {
+                l_Node.PrintBinary();
+                if (l_i < l_PalindromeCounter - 1)
+                {
+                    l_i++;
+                    Console.Write(", ");
+                }
+            }
+        }
+        public static void PrintMaxDifferenceBinary(BinaryNumber[] i_BinaryNumbersArray)
+        {
+            string l_output = @"Number with maximum difference between 1s and 0s: ";
+            Console.Write(l_output);
+            List<BinaryNumber> l_ListOfBinaryWithMaxDifference = new List<BinaryNumber>();
+            int l_MaxDifference = 0;
+
+            foreach (BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            {
+                int l_Difference = l_BinaryNumber.Get1sAnd0sDifference();
+                if (l_Difference>l_MaxDifference)
+                {
+                    l_MaxDifference = l_Difference;
+                }
+            }
+            foreach(BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            {
+                if(l_BinaryNumber.Get1sAnd0sDifference()==l_MaxDifference)
+                {
+                    l_BinaryNumber.PrintBinary();
+                    break;
+                }
+            }
+           
+            l_output = $@" - Difference of {l_MaxDifference}";
+            Console.Write(l_output);
+        }
+        public static void PrintNumbersThatStartAndEndWithSameDigit(BinaryNumber[] i_BinaryNumbersArray)
+        {
+            string l_output = @"Numbers that start and end with same digit: ";
+            Console.Write(l_output);
+            List<BinaryNumber> l_ListOfBinaryThatStartAndEndWithSameDigit = new List<BinaryNumber>();
+            int l_Counter = 0, l_i = 0;
+            foreach (BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            {
+                if (l_BinaryNumber.IsStartAndEndWithSameDigit() == true)
+                {
+                    l_ListOfBinaryThatStartAndEndWithSameDigit.Add(l_BinaryNumber);
+                    l_Counter++;
+                }
+            }
+            l_output = $@"{l_Counter} ";
+            Console.Write(l_output);
+            foreach(BinaryNumber l_BinaryNumber in l_ListOfBinaryThatStartAndEndWithSameDigit)
+            {
+                l_BinaryNumber.PrintBinary();
+                if(l_i<l_Counter-1)
+                {
+                    l_i++;
+                    Console.Write(", ");
+                }
+            }
 
         }
     }

@@ -7,8 +7,7 @@ namespace Ex01_03
     {
         public static void Main()
         {
-            NumbersTree InputNumbersTree = DynamicNumbersTree.CreateNumberTree();
-            DynamicNumbersTree.Print(InputNumbersTree);
+            DynamicNumbersTreeProgram.StartProgram();
         }
     }
 }

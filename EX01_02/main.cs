@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Ex01_02;
+using System;
 
-namespace Ex01_02
+
+namespace EX01_02
 {
-    internal class main
+    public class main
     {
-        static public void Main()
+        static void Main()
         {
-            NumbersTree numberTree = new NumbersTree();
-            numberTree.Print();
+            NumbersTreeProgram.StartProgram();
         }
     }
 }

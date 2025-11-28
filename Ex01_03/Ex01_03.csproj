@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DynamicNumbersTree.cs" />
+    <Compile Include="DynamicNumbersTreeProgram.cs" />
     <Compile Include="main.cs" />
   </ItemGroup>
   <ItemGroup>

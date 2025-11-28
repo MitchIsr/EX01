@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="main.cs" />
+    <Compile Include="NumbersTreeProgram.cs" />
     <Compile Include="NumbersTree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

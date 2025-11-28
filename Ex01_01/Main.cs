@@ -4,7 +4,7 @@ using Ex01_01_Utilities;
 
 class main
 {
-    static void Main()
+    static public void Main()
     {
         BinaryNumber[] l_BinaryNumberArray = new BinaryNumber[3];
 

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6EB8F67-B750-48C5-AAEC-9F6131663C2F}</ProjectGuid>
+    <ProjectGuid>{9D6BBDB7-DED0-4380-95A5-CD567F9BDE9C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ex01_01</RootNamespace>
-    <AssemblyName>Ex01_01</AssemblyName>
+    <RootNamespace>Project1</RootNamespace>
+    <AssemblyName>Project1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,9 +36,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryNumber.cs" />
     <Compile Include="main.cs" />
-    <Compile Include="EX01_01_Utilities\BinaryNumberUtilities.cs" />
+    <Compile Include="NumberStatistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

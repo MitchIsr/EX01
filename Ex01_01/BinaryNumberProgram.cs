@@ -20,6 +20,7 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
                 while (v_isInputValid == false)
                 {
                     string input = Console.ReadLine();
+
                     try
                     {
                         l_BinaryNumberArray[i] = l_BinaryNumberArray[i].Parse(input);
@@ -31,9 +32,11 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
                     }
                 }
             }
+
             BinaryNumberUtilities.quickSort(l_BinaryNumberArray, 0, l_BinaryNumberArray.Length - 1);
             l_Output = "Decimal numbers in ascending order: ";
             Console.Write(l_Output);
+
             for (int i = 0; i < 3; i++)
             {
                 l_BinaryNumberArray[i].PrintNumericValue();

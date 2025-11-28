@@ -1,0 +1,33 @@
+﻿using System;
+using Ex01_02;
+
+namespace Ex01_03
+{
+    public static class DynamicNumbersTree
+    {
+        public static NumbersTree CreateNumberTree()
+        {
+            string msg = string.Format(@"Please enter the height you whishes for the Number Tree (minimum is 4 , maximum is 15): ");
+            Console.WriteLine(msg);
+            while (true)
+            {
+                string l_UserInputStr = Console.ReadLine();
+                bool isValidNumber = int.TryParse(l_UserInputStr, out int l_TreeHeight);
+                if (isValidNumber && l_TreeHeight >= 4 && l_TreeHeight <= 15)
+                {
+                    NumbersTree o_NumbersTree = new NumbersTree(l_TreeHeight);
+                    return o_NumbersTree;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input! Please enter a valid number between 4 and 15:\n");
+                }
+            }
+        }
+
+        static public void Print(NumbersTree i_NumbersTree)
+        {
+            i_NumbersTree.Print();
+        }
+    }
+}

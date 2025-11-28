@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C51B2F8A-857C-49D8-99B4-F9A905399BAF}</ProjectGuid>
+    <ProjectGuid>{98B8187F-0589-4CB8-9E37-BEF1876CB249}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EX01_02</RootNamespace>
-    <AssemblyName>EX01_02</AssemblyName>
+    <RootNamespace>Ex01_03</RootNamespace>
+    <AssemblyName>Ex01_03</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,8 +36,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DynamicNumbersTree.cs" />
     <Compile Include="main.cs" />
-    <Compile Include="NumbersTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EX01_02\Ex01_02.csproj">
+      <Project>{c51b2f8a-857c-49d8-99b4-f9a905399baf}</Project>
+      <Name>Ex01_02</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

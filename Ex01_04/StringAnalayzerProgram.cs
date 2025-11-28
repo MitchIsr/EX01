@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+
 namespace Ex01_04
 {
     public class StringAnalayzerProgram
@@ -9,15 +10,17 @@ namespace Ex01_04
             string l_Output = @"Hello, Welcome to Ex01_04 String Analayzer
 Please Enter any input With a length of 10: ";
             Console.WriteLine(l_Output);
+
             StringAnalayzer l_StrInput = new StringAnalayzer();
-            bool f_isInputValid = false;
-            while (f_isInputValid == false)
+            bool v_isInputValid = false;
+
+            while (v_isInputValid == false)
             {
                 string l_input = Console.ReadLine();
                 try
                 {
                     l_StrInput = StringAnalayzer.Parse(l_input);
-                    f_isInputValid = true;
+                    v_isInputValid = true;
                 }
                 catch (Exception l_invalidinput)
                 {

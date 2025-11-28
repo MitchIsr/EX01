@@ -21,12 +21,9 @@ namespace Ex01_01
             {
                 m_BinaryNum[i] = i_BinaryNum[i];
             }
-            m_NumericValue = ConvertToBase10();
+            m_NumericValue = GetBinaryInBase10();
         }
-        /* public int[] GetBinaryNumber()
-         {
-             return m_BinaryNum[];
-         }*/
+
         public int GetBinaryDigit(int Index)
         {
             return this.m_BinaryNum[Index];
@@ -36,12 +33,12 @@ namespace Ex01_01
         {
             return m_NumericValue;
         }
-        public static bool CheckIfLengthIs8(string i_BinaryNumberstr)
+        public static bool IsLengthEquals8(string i_BinaryNumberstr)
         {
             return i_BinaryNumberstr.Length == 8;
         }
 
-        public static bool CheckIfContainDigit1And0(string i_BinaryNumberStr)
+        public static bool IsContainDigit1And0(string i_BinaryNumberStr)
         {
             bool l_isBinaryDigit = false;
             for (int i = 0; i < i_BinaryNumberStr.Length; i++)
@@ -52,21 +49,21 @@ namespace Ex01_01
             }
             return l_isBinaryDigit;
         }
-        public int ConvertToBase10()
+        public int GetBinaryInBase10()
         {
-            int l_SumOfBinary = 0;
-            for (int i = 0, Current_index_rep = 1; i < 8; i++, Current_index_rep *= 2)
+            int l_SumOfBinaryInNumeric = 0;
+            for (int i = 0, l_CurrentIndexRep = 1; i < 8; i++, l_CurrentIndexRep *= 2)
             {
-                l_SumOfBinary += (Current_index_rep * m_BinaryNum[i]);
+                l_SumOfBinaryInNumeric += (l_CurrentIndexRep * m_BinaryNum[i]);
             }
-            return l_SumOfBinary;
+            return l_SumOfBinaryInNumeric;
         }
 
 
 
         public static bool CheckUserInput(string i_BinaryNumberStr)
         {
-            return CheckIfContainDigit1And0(i_BinaryNumberStr) && CheckIfLengthIs8(i_BinaryNumberStr);
+            return IsContainDigit1And0(i_BinaryNumberStr) && IsLengthEquals8(i_BinaryNumberStr);
         }
 
         public BinaryNumber Parse(string i_BinaryNumberStr)
@@ -103,13 +100,7 @@ namespace Ex01_01
             Console.Write(l_Builder.ToString());
 
         }
-        static void PrintBinaryNumber(int[,] i_Binary_Numbers, int row)
-        {
-            for (int i = 7; i >= 0; i--)
-            {
-                Console.Write(i_Binary_Numbers[row, i]);
-            }
-        }
+
         public void PrintNumericValue()
         {
             string l_numericOutput = GetNumericValue().ToString();
@@ -148,15 +139,12 @@ namespace Ex01_01
 
         public bool IsPalindrome()
         {
-            bool l_flag = true;
+            bool l_IsDigitsEqualOrNot = true;
             for (int i = 0, j = 7; i < 4; i++, j--)
             {
-                if (GetBinaryDigit(i) != GetBinaryDigit(j))
-                {
-                    l_flag = false;
-                }
+                l_IsDigitsEqualOrNot = !(GetBinaryDigit(i) != GetBinaryDigit(j));
             }
-            return l_flag;
+            return l_IsDigitsEqualOrNot;
         }
         public int Get1sAnd0sDifference()
         {
@@ -174,7 +162,8 @@ namespace Ex01_01
                 }
 
             }
-            return l_1sCounter > l_0sCounter ? l_1sCounter - l_0sCounter : l_0sCounter - l_1sCounter;
+
+            return BinaryNumberUtilities.Absolute(l_1sCounter, l_0sCounter);
         }
         public bool IsStartAndEndWithSameDigit()
         {

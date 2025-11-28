@@ -11,14 +11,14 @@ namespace ProgramStart
 Please Enter a Number With a length of 7:";
             Console.WriteLine(l_Output);
             NumberStatistics l_Numberinput = new NumberStatistics();
-            bool f_isInputValid = false;
-            while (f_isInputValid == false)
+            bool v_isInputValid = false;
+            while (v_isInputValid == false)
             {
                 string l_input = Console.ReadLine();
                 try
                 {
                     l_Numberinput = NumberStatistics.Parse(l_input);
-                    f_isInputValid = true;
+                    v_isInputValid = true;
                 }
                 catch (Exception l_invalidinput)
                 {

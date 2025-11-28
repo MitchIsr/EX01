@@ -6,6 +6,21 @@ namespace Ex01_01_Utilities
 {
    public class BinaryNumberUtilities
     {
+        public static void Swap(ref int i_Number1,ref int i_Number2)
+        {
+            int l_TempNumber = i_Number1;
+            i_Number1 = i_Number2;
+            i_Number2 = l_TempNumber;
+        }
+        public static int Absolute(int i_Number1, int i_Number2)
+        {
+            if(i_Number1<i_Number2)
+            {
+                Swap(ref i_Number1,ref i_Number2);
+            }
+
+            return i_Number1 - i_Number2;
+        }
         public static float Avg(BinaryNumber i_binaryNumber1, BinaryNumber i_binaryNumber2, BinaryNumber i_binaryNumber3)
         {
             int l_BinaryNumber1Dec = i_binaryNumber1.GetNumericValue();
@@ -91,6 +106,7 @@ namespace Ex01_01_Utilities
         {
             int l_PalindromeCounter = 0, l_i = 0; ;
             List<BinaryNumber> l_ListOfBinaryPalindromes = new List<BinaryNumber>();
+
             for(int i =0;i<3;i++)
             {
                 if(i_BinaryNumbersArray[i].IsPalindrome())
@@ -117,6 +133,7 @@ namespace Ex01_01_Utilities
         {
             string l_output = @"Number with maximum difference between 1s and 0s: ";
             Console.Write(l_output);
+
             List<BinaryNumber> l_ListOfBinaryWithMaxDifference = new List<BinaryNumber>();
             int l_MaxDifference = 0;
 
@@ -128,6 +145,7 @@ namespace Ex01_01_Utilities
                     l_MaxDifference = l_Difference;
                 }
             }
+
             foreach(BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
             {
                 if(l_BinaryNumber.Get1sAnd0sDifference()==l_MaxDifference)
@@ -145,7 +163,8 @@ namespace Ex01_01_Utilities
             string l_output = @"Numbers that start and end with same digit: ";
             Console.Write(l_output);
             List<BinaryNumber> l_ListOfBinaryThatStartAndEndWithSameDigit = new List<BinaryNumber>();
-            int l_Counter = 0, l_i = 0;
+            int l_Counter = 0, i = 0;
+
             foreach (BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
             {
                 if (l_BinaryNumber.IsStartAndEndWithSameDigit() == true)
@@ -154,14 +173,16 @@ namespace Ex01_01_Utilities
                     l_Counter++;
                 }
             }
+
             l_output = $@"{l_Counter} ";
             Console.Write(l_output);
+
             foreach(BinaryNumber l_BinaryNumber in l_ListOfBinaryThatStartAndEndWithSameDigit)
             {
                 l_BinaryNumber.PrintBinary();
-                if(l_i<l_Counter-1)
+                if(i<l_Counter-1)
                 {
-                    l_i++;
+                    i++;
                     Console.Write(", ");
                 }
             }

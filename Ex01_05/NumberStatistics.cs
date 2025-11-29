@@ -21,22 +21,22 @@ namespace NumberStats
         }
         public static bool CheckUserInput(string i_numberStr)
         {
-            int l_ContainDigitsOnly;
-            return CheckIfLengthIs7(i_numberStr) && int.TryParse(i_numberStr, out l_ContainDigitsOnly);
+            int lo_containDigitsOnly;
+            return CheckIfLengthIs7(i_numberStr) && int.TryParse(i_numberStr, out lo_containDigitsOnly);
         }
 
         public static NumberStatistics Parse(string i_numberStr)
         {
-            NumberStatistics l_NumberStatisticsObject;
+            NumberStatistics o_numberStatisticsObject;
             if (CheckUserInput(i_numberStr) == true)
             {
-                l_NumberStatisticsObject = new NumberStatistics(i_numberStr);
+                o_numberStatisticsObject = new NumberStatistics(i_numberStr);
             }
             else
             {
                 throw new Exception("Must Contain Digits with Length of 7 , Numbers Cannot start with 0");
             }
-            return l_NumberStatisticsObject;
+            return o_numberStatisticsObject;
         }
 
         public int GetDigit(int i_Index)
@@ -45,74 +45,74 @@ namespace NumberStats
         }
         public void PrintCountDigitsBiggerThanFirstDigit()
         {
-            int l_BiggerDigitsCounter = 0;
-            int l_FirstDigit = GetDigit(0);
+            int o_biggerDigitsCounter = 0;
+            int o_firstDigit = GetDigit(0);
             for (int i = 1; i < 7; i++)
             {
-                if (GetDigit(i) > l_FirstDigit)
+                if (GetDigit(i) > o_firstDigit)
                 {
-                    l_BiggerDigitsCounter++;
+                    o_biggerDigitsCounter++;
                 }
             }
-            string l_output = $@"First left Digit: {l_FirstDigit}. Digits Bigger Than it: {l_BiggerDigitsCounter}";
-            Console.WriteLine(l_output);
+            string output = $@"First left Digit: {o_firstDigit}. Digits Bigger Than it: {o_biggerDigitsCounter}";
+            Console.WriteLine(output);
  
         }
 
 
         public void PrintHowManyDigitsDevidedBy3Counter()
         {
-            int l_DigitsDevideableBy3Counter = 0;
+            int o_digitsDevideableBy3Counter = 0;
             for(int i = 0; i<7;i++)
             {
                 if (GetDigit(i) % 3 == 0)
-                    l_DigitsDevideableBy3Counter++;
+                    o_digitsDevideableBy3Counter++;
             }
-            string l_output = $@"How Many Numbers Devided By 3? {l_DigitsDevideableBy3Counter} ";
-            Console.WriteLine(l_output);
+            string output = $@"How Many Numbers Devided By 3? {o_digitsDevideableBy3Counter} ";
+            Console.WriteLine(output);
         }
 
         public void PrintDifferenceBetweenMaxDigitAndMinDigit()
         {
-            int l_Min = 9, l_Max = 0;
+            int o_min = 9, o_max = 0;
             for (int i = 0; i < 7; i++)
             {
-                int l_CurrentDigit = GetDigit(i);
-                if(l_CurrentDigit>l_Max)
+                int l_currentDigit = GetDigit(i);
+                if(l_currentDigit>o_max)
                 {
-                    l_Max = l_CurrentDigit;
+                    o_max = l_currentDigit;
                 }
-                if (l_CurrentDigit < l_Min)
+                if (l_currentDigit < o_min)
                 {
-                    l_Min = l_CurrentDigit;
+                    o_min = l_currentDigit;
                 }
             }
-            string l_output = $@"Difference Between Biggest Digit and Smallest: {(l_Max - l_Min)}";
-            Console.WriteLine(l_output);
+            string output = $@"Difference Between Biggest Digit and Smallest: {(o_max - o_min)}";
+            Console.WriteLine(output);
 
         }
         public void PrintMostCommonDigit()
         {
-            int l_MaxAppearanceCounter = 0;
-            int l_MaxAppearanceDigit= -1;
+            int o_maxAppearanceCounter = 0;
+            int o_maxAppearanceDigit= -1;
             for(int i=0; i<7; i++)
             {
-                int l_CurrentDigit = GetDigit(i);
-                int l_CurrentDigitCounter = 0;
+                int l_currentDigit = GetDigit(i);
+                int l_currentDigitCounter = 0;
 
                 for (int j = 0; j < 7; j++)
                 {
-                    if (GetDigit(j) == l_CurrentDigit)
-                        l_CurrentDigitCounter++;
+                    if (GetDigit(j) == l_currentDigit)
+                        l_currentDigitCounter++;
                 }
-                if(l_CurrentDigitCounter> l_MaxAppearanceCounter)
+                if(l_currentDigitCounter> o_maxAppearanceCounter)
                 {
-                    l_MaxAppearanceCounter = l_CurrentDigitCounter;
-                    l_MaxAppearanceDigit = l_CurrentDigit;
+                    o_maxAppearanceCounter = l_currentDigitCounter;
+                    o_maxAppearanceDigit = l_currentDigit;
                 }
             }
-            string l_output = $@"Most Common Digit: {l_MaxAppearanceDigit} (Shows up {l_MaxAppearanceCounter} times) ";
-            Console.WriteLine(l_output);
+            string output = $@"Most Common Digit: {o_maxAppearanceDigit} (Shows up {o_maxAppearanceCounter} times) ";
+            Console.WriteLine(output);
         }
               
    

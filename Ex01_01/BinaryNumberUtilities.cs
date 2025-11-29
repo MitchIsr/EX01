@@ -6,11 +6,11 @@ namespace Ex01_01_Utilities
 {
    public class BinaryNumberUtilities
     {
-        public static void Swap(ref int i_Number1,ref int i_Number2)
+        public static void Swap(ref int i_number1,ref int i_number2)
         {
-            int l_TempNumber = i_Number1;
-            i_Number1 = i_Number2;
-            i_Number2 = l_TempNumber;
+            int l_tempNumber = i_number1;
+            i_number1 = i_number2;
+            i_number2 = l_tempNumber;
         }
         public static int Absolute(int i_Number1, int i_Number2)
         {
@@ -21,13 +21,14 @@ namespace Ex01_01_Utilities
 
             return i_Number1 - i_Number2;
         }
+
         public static float Avg(BinaryNumber i_binaryNumber1, BinaryNumber i_binaryNumber2, BinaryNumber i_binaryNumber3)
         {
-            int l_BinaryNumber1Dec = i_binaryNumber1.GetNumericValue();
-            int l_BinaryNumber2Dec = i_binaryNumber2.GetNumericValue();
-            int l_BinaryNumber3Dec = i_binaryNumber3.GetNumericValue();
+            int o_binaryNumber1Dec = i_binaryNumber1.GetNumericValue();
+            int o_binaryNumber2Dec = i_binaryNumber2.GetNumericValue();
+            int o_binaryNumber3Dec = i_binaryNumber3.GetNumericValue();
 
-            return ((float)(l_BinaryNumber1Dec + l_BinaryNumber2Dec + l_BinaryNumber3Dec) / 3);
+            return ((float)(o_binaryNumber1Dec + o_binaryNumber2Dec + o_binaryNumber3Dec) / 3);
         }
 
 
@@ -43,58 +44,58 @@ namespace Ex01_01_Utilities
         }
 
 
-        public static int PartitionBinArray(BinaryNumber[] i_BinaryNumbersArray, int i_low, int i_high)
+        public static int PartitionBinArray(BinaryNumber[] io_BinaryNumbersArray, int i_low, int i_high)
         {
 
-            int l_PivotValue = i_BinaryNumbersArray[i_high].GetNumericValue();
+            int l_pivotValue = io_BinaryNumbersArray[i_high].GetNumericValue();
             int i = i_low - 1;
 
             for (int j = i_low; j < i_high; j++)
             {
-                if (i_BinaryNumbersArray[j].GetNumericValue() <= l_PivotValue)
+                if (io_BinaryNumbersArray[j].GetNumericValue() <= l_pivotValue)
                 {
                     i++;
-                    SwapArrayValue(ref i_BinaryNumbersArray, i, j);
+                    SwapArrayValue(ref io_BinaryNumbersArray, i, j);
                 }
             }
-            SwapArrayValue(ref i_BinaryNumbersArray, i + 1, i_high);
+            SwapArrayValue(ref io_BinaryNumbersArray, i + 1, i_high);
             return i + 1;
         }
 
-        public static void SwapArrayValue(ref BinaryNumber[] i_BinaryNumbersArray, int i, int j)
+        public static void SwapArrayValue(ref BinaryNumber[] io_BinaryNumbersArray, int i, int j)
         {
-            BinaryNumber l_temp = i_BinaryNumbersArray[i];
-            i_BinaryNumbersArray[i] = i_BinaryNumbersArray[j];
-            i_BinaryNumbersArray[j] = l_temp;
+            BinaryNumber l_temp = io_BinaryNumbersArray[i];
+            io_BinaryNumbersArray[i] = io_BinaryNumbersArray[j];
+            io_BinaryNumbersArray[j] = l_temp;
         }
 
         public static void FindShortestBitSequence(BinaryNumber[] i_BinaryNumbersArray)
         {
-            int[] l_LengthOfBitSequenceBinNumberArray = new int[i_BinaryNumbersArray.Length];
+            int[] lo_lengthOfBitSequenceBinNumberArray = new int[i_BinaryNumbersArray.Length];
             for (int i = 0; i < i_BinaryNumbersArray.Length; i++)
             {
-                l_LengthOfBitSequenceBinNumberArray[i] = i_BinaryNumbersArray[i].GetShortestBitSequence();
+                lo_lengthOfBitSequenceBinNumberArray[i] = i_BinaryNumbersArray[i].GetShortestBitSequence();
             }
-            int l_MinimumSequence = Math.Min(l_LengthOfBitSequenceBinNumberArray[0], Math.Min(l_LengthOfBitSequenceBinNumberArray[1], l_LengthOfBitSequenceBinNumberArray[2]));
+            int o_minimumSequence = Math.Min(lo_lengthOfBitSequenceBinNumberArray[0], Math.Min(lo_lengthOfBitSequenceBinNumberArray[1], lo_lengthOfBitSequenceBinNumberArray[2]));
 
-            string l_Output = $@"Shortest bit sequence: {l_MinimumSequence} ";
-            Console.Write(l_Output);
+            string output = $@"Shortest bit sequence: {o_minimumSequence} ";
+            Console.Write(output);
 
-            int l_ShortSequenceCounter = 0;
+            int o_shortSequenceCounter = 0;
             for (int i = 0; i < 3; i++)
             {
-                if (l_LengthOfBitSequenceBinNumberArray[i] == l_MinimumSequence)
+                if (lo_lengthOfBitSequenceBinNumberArray[i] == o_minimumSequence)
                 {
-                    l_ShortSequenceCounter++;
+                    o_shortSequenceCounter++;
                 }
             }
 
             for (int i = 0; i < 3; i++)
             {
-                if (l_LengthOfBitSequenceBinNumberArray[i] == l_MinimumSequence)
+                if (lo_lengthOfBitSequenceBinNumberArray[i] == o_minimumSequence)
                 {
                     i_BinaryNumbersArray[i].PrintBinary();
-                    if (i < l_ShortSequenceCounter-1)
+                    if (i < o_shortSequenceCounter-1)
                     {
                         Console.Write(", ");
                     }
@@ -104,72 +105,71 @@ namespace Ex01_01_Utilities
         }
         public static void PrintPalindromesOfBinary(BinaryNumber[] i_BinaryNumbersArray)
         {
-            int l_PalindromeCounter = 0, l_i = 0; ;
-            List<BinaryNumber> l_ListOfBinaryPalindromes = new List<BinaryNumber>();
+            int o_palindromeCounter = 0, j = 0;
+            List<BinaryNumber> lo_listOfBinaryPalindromes = new List<BinaryNumber>();
 
-            for(int i =0;i<3;i++)
+            for (int i = 0; i < 3; i++)
             {
-                if(i_BinaryNumbersArray[i].IsPalindrome())
+                if (i_BinaryNumbersArray[j].IsPalindrome())
                 {
-                    l_PalindromeCounter++;
-                    l_ListOfBinaryPalindromes.Add(i_BinaryNumbersArray[i]);
+                    o_palindromeCounter++;
+                    lo_listOfBinaryPalindromes.Add(i_BinaryNumbersArray[j]);
                 }
             }
- 
-            string l_output = $@"Number of Palindromes : {l_PalindromeCounter} ";
-            Console.Write(l_output);
 
-            foreach (BinaryNumber l_Node in l_ListOfBinaryPalindromes)
+            string output = $@"Number of Palindromes : {o_palindromeCounter} ";
+            Console.Write(output);
+
+            foreach (BinaryNumber o_node in lo_listOfBinaryPalindromes)
             {
-                l_Node.PrintBinary();
-                if (l_i < l_PalindromeCounter - 1)
+                o_node.PrintBinary();
+                if (j < o_palindromeCounter - 1)
                 {
-                    l_i++;
+                    j++;
                     Console.Write(", ");
                 }
             }
         }
         public static void PrintMaxDifferenceBinary(BinaryNumber[] i_BinaryNumbersArray)
         {
-            string l_output = @"Number with maximum difference between 1s and 0s: ";
-            Console.Write(l_output);
+            string output = @"Number with maximum difference between 1s and 0s: ";
+            Console.Write(output);
 
-            List<BinaryNumber> l_ListOfBinaryWithMaxDifference = new List<BinaryNumber>();
-            int l_MaxDifference = 0;
-
-            foreach (BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            int o_maxDifference = 0;
+            foreach (BinaryNumber l_binaryNumber in i_BinaryNumbersArray)
             {
-                int l_Difference = l_BinaryNumber.Get1sAnd0sDifference();
-                if (l_Difference>l_MaxDifference)
+                int l_difference = l_binaryNumber.Get1sAnd0sDifference();
+                if (l_difference>o_maxDifference)
                 {
-                    l_MaxDifference = l_Difference;
+                    o_maxDifference = l_difference;
                 }
             }
 
-            foreach(BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            foreach(BinaryNumber l_binaryNumber in i_BinaryNumbersArray)
             {
-                if(l_BinaryNumber.Get1sAnd0sDifference()==l_MaxDifference)
+                if(l_binaryNumber.Get1sAnd0sDifference()==o_maxDifference)
                 {
-                    l_BinaryNumber.PrintBinary();
+                    l_binaryNumber.PrintBinary();
                     break;
                 }
             }
            
-            l_output = $@" - Difference of {l_MaxDifference}";
-            Console.Write(l_output);
+            output = $@" - Difference of {o_maxDifference}";
+            Console.Write(output);
         }
+
         public static void PrintNumbersThatStartAndEndWithSameDigit(BinaryNumber[] i_BinaryNumbersArray)
         {
             string l_output = @"Numbers that start and end with same digit: ";
             Console.Write(l_output);
-            List<BinaryNumber> l_ListOfBinaryThatStartAndEndWithSameDigit = new List<BinaryNumber>();
+            List<BinaryNumber> l_listOfBinaryThatStartAndEndWithSameDigit = new List<BinaryNumber>();
             int l_Counter = 0, i = 0;
 
-            foreach (BinaryNumber l_BinaryNumber in i_BinaryNumbersArray)
+            foreach (BinaryNumber l_binaryNumber in i_BinaryNumbersArray)
             {
-                if (l_BinaryNumber.IsStartAndEndWithSameDigit() == true)
+                if (l_binaryNumber.IsStartAndEndWithSameDigit() == true)
                 {
-                    l_ListOfBinaryThatStartAndEndWithSameDigit.Add(l_BinaryNumber);
+                    l_listOfBinaryThatStartAndEndWithSameDigit.Add(l_binaryNumber);
                     l_Counter++;
                 }
             }
@@ -177,7 +177,7 @@ namespace Ex01_01_Utilities
             l_output = $@"{l_Counter} ";
             Console.Write(l_output);
 
-            foreach(BinaryNumber l_BinaryNumber in l_ListOfBinaryThatStartAndEndWithSameDigit)
+            foreach(BinaryNumber l_BinaryNumber in l_listOfBinaryThatStartAndEndWithSameDigit)
             {
                 l_BinaryNumber.PrintBinary();
                 if(i<l_Counter-1)

@@ -11,16 +11,16 @@ namespace Ex01_04
 Please Enter any input With a length of 10: ";
             Console.WriteLine(l_Output);
 
-            StringAnalayzer l_StrInput = new StringAnalayzer();
-            bool v_isInputValid = false;
+            StringAnalayzer i_strInput = new StringAnalayzer();
+            bool isInputValid = false;
 
-            while (v_isInputValid == false)
+            while (isInputValid == false)
             {
                 string l_input = Console.ReadLine();
                 try
                 {
-                    l_StrInput = StringAnalayzer.Parse(l_input);
-                    v_isInputValid = true;
+                    i_strInput = StringAnalayzer.Parse(l_input);
+                    isInputValid = true;
                 }
                 catch (Exception l_invalidinput)
                 {
@@ -28,17 +28,17 @@ Please Enter any input With a length of 10: ";
                 }
             }
 
-            l_StrInput.PrintIsPalindrome();
+            i_strInput.PrintIsPalindrome();
 
-            if (l_StrInput.IsNumbersOnly() == true)
+            if (i_strInput.IsNumbersOnly() == true)
             {
-                l_StrInput.PrintIsDevidedBy3();
+                i_strInput.PrintIsDevidedBy3();
             }
-            else if (l_StrInput.IsLettersOnly() == true) 
+            else if (i_strInput.IsLettersOnly() == true) 
             {
-                l_StrInput.PrintHowManyUpperCase();
-                l_StrInput.PrintHowManyLowerCase();
-                l_StrInput.PrintIsInAlphabeticalOrder();
+                i_strInput.PrintHowManyUpperCase();
+                i_strInput.PrintHowManyLowerCase();
+                i_strInput.PrintIsInAlphabeticalOrder();
             }
 
         }

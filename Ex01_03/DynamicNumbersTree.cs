@@ -12,18 +12,18 @@ namespace Ex01_03
 
             while (true)
             {
-                string l_UserInputStr = Console.ReadLine();
-                bool l_IsValidNumber = int.TryParse(l_UserInputStr, out int l_TreeHeight);
+                string i_userInputStr = Console.ReadLine();
+                bool l_IsValidNumber = int.TryParse(i_userInputStr, out int i_TreeHeight);
 
-                if (l_IsValidNumber && l_TreeHeight >= 4 && l_TreeHeight <= 15)
+                if (l_IsValidNumber == true && i_TreeHeight >= 4 && i_TreeHeight <= 15)
                 {
-                    NumbersTree o_NumbersTree = new NumbersTree(l_TreeHeight);
+                    NumbersTree o_NumbersTree = new NumbersTree(i_TreeHeight);
                     return o_NumbersTree;
                 }
                 else
                 {
-                    string l_Output = @"Invalid input! Please enter a valid number between 4 and 15: ";
-                    Console.WriteLine(l_Output);
+                    string output = @"Invalid input! Please enter a valid number between 4 and 15: ";
+                    Console.WriteLine(output);
                 }
             }
         }

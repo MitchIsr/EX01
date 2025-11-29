@@ -8,23 +8,23 @@ namespace ProgramStart
     {
         public static void StartProgram()
         {
-            BinaryNumber[] l_BinaryNumberArray = new BinaryNumber[3];
+            BinaryNumber[] i_binaryNumberArray = new BinaryNumber[3];
 
-            string l_Output = @"Hello, Welcome to Ex_01_01 Binary Sequences
+            string output = @"Hello, Welcome to Ex_01_01 Binary Sequences
 Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
-            Console.WriteLine(l_Output);
+            Console.WriteLine(output);
             for (int i = 0; i < 3; i++)
             {
-                l_BinaryNumberArray[i] = new BinaryNumber();
-                bool v_isInputValid = false;
-                while (v_isInputValid == false)
+                i_binaryNumberArray[i] = new BinaryNumber();
+                bool isInputValid = true;
+                while (!isInputValid == false)
                 {
-                    string input = Console.ReadLine();
+                    string i_binaryNumber = Console.ReadLine();
 
                     try
                     {
-                        l_BinaryNumberArray[i] = l_BinaryNumberArray[i].Parse(input);
-                        v_isInputValid = true;
+                        i_binaryNumberArray[i] = i_binaryNumberArray[i].Parse(i_binaryNumber);
+                        isInputValid = false;
                     }
                     catch (Exception l_invalidinput)
                     {
@@ -33,36 +33,36 @@ Please Enter 3 Numbers In Binary Format With a Length of up to 8:";
                 }
             }
 
-            BinaryNumberUtilities.quickSort(l_BinaryNumberArray, 0, l_BinaryNumberArray.Length - 1);
-            l_Output = "Decimal numbers in ascending order: ";
-            Console.Write(l_Output);
+            BinaryNumberUtilities.quickSort(i_binaryNumberArray, 0, i_binaryNumberArray.Length - 1);
+            output = "Decimal numbers in ascending order: ";
+            Console.Write(output);
 
             for (int i = 0; i < 3; i++)
             {
-                l_BinaryNumberArray[i].PrintNumericValue();
-                l_BinaryNumberArray[i].PrintBinary();
+                i_binaryNumberArray[i].PrintNumericValue();
+                i_binaryNumberArray[i].PrintBinary();
                 if (i < 2)
                 {
                     Console.Write(", ");
                 }
 
             }
-            float l_BinaryNumbersAverage = BinaryNumberUtilities.Avg(l_BinaryNumberArray[0], l_BinaryNumberArray[1], l_BinaryNumberArray[2]);
+            float l_binaryNumbersAverage = BinaryNumberUtilities.Avg(i_binaryNumberArray[0], i_binaryNumberArray[1], i_binaryNumberArray[2]);
             Console.WriteLine();
 
-            l_Output = $@"Average: {l_BinaryNumbersAverage}";
-            Console.WriteLine(l_Output);
+            output = $@"Average: {l_binaryNumbersAverage}";
+            Console.WriteLine(output);
 
-            BinaryNumberUtilities.FindShortestBitSequence(l_BinaryNumberArray);
+            BinaryNumberUtilities.FindShortestBitSequence(i_binaryNumberArray);
             Console.WriteLine();
 
-            BinaryNumberUtilities.PrintPalindromesOfBinary(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintPalindromesOfBinary(i_binaryNumberArray);
             Console.WriteLine();
 
-            BinaryNumberUtilities.PrintMaxDifferenceBinary(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintMaxDifferenceBinary(i_binaryNumberArray);
             Console.WriteLine();
 
-            BinaryNumberUtilities.PrintNumbersThatStartAndEndWithSameDigit(l_BinaryNumberArray);
+            BinaryNumberUtilities.PrintNumbersThatStartAndEndWithSameDigit(i_binaryNumberArray);
             Console.WriteLine();
 
         }

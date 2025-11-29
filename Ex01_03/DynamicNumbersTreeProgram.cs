@@ -8,8 +8,8 @@ namespace Ex01_03
     {
         public static void StartProgram()
         {
-            NumbersTree InputNumbersTree = DynamicNumbersTree.CreateNumberTree();
-            DynamicNumbersTree.Print(InputNumbersTree);
+            NumbersTree inputNumbersTree = DynamicNumbersTree.CreateNumberTree();
+            DynamicNumbersTree.Print(inputNumbersTree);
         }
     }
 }

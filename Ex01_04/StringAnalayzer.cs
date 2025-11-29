@@ -24,151 +24,151 @@ namespace Ex01_04
                 m_InputAsLetters = m_InputStr;
             }
         }
-        public static bool CheckIfLengthIs10(string i_inputStr)
+        public static bool CheckIfLengthIs10(string io_inputStr)
         {
-            return i_inputStr.Length == 10;
+            return io_inputStr.Length == 10;
         }
-        public static bool CheckUserInput(string i_numberStr)
+        public static bool CheckUserInput(string io_numberStr)
         {
-            return CheckIfLengthIs10(i_numberStr);
+            return CheckIfLengthIs10(io_numberStr);
         }
-        public static StringAnalayzer Parse(string i_inputStr)
+        public static StringAnalayzer Parse(string io_inputStr)
         {
-            StringAnalayzer l_StringAnalayzerObject;
-            if (CheckUserInput(i_inputStr) == true)
+            StringAnalayzer o_stringAnalayzerObject;
+            if (CheckUserInput(io_inputStr) == true)
             {
-                l_StringAnalayzerObject = new StringAnalayzer(i_inputStr);
+                o_stringAnalayzerObject = new StringAnalayzer(io_inputStr);
             }
             else
             {
                 throw new Exception("Must Contain input Length of 10");
             }
-            return l_StringAnalayzerObject;
+            return o_stringAnalayzerObject;
         }
 
         public bool IsNumbersOnly()
         {
-            long l_StrAsNumber;
-            return long.TryParse(m_InputStr, out l_StrAsNumber);
+            long o_strAsNumber;
+            return long.TryParse(m_InputStr, out o_strAsNumber);
         }
         public bool IsLettersOnly()
         {
-            bool l_flag = true;
+            bool o_flag = true;
             for (int i = 0; i < 10; i++)
             {
                 if (!('A' <= m_InputStr[i] && m_InputStr[i] <= 'Z') && !('a' <= m_InputStr[i] && m_InputStr[i] <= 'z'))
                 {
-                    l_flag = false;
+                    o_flag = false;
                 }
             }
-            return l_flag;
+            return o_flag;
         }
 
         public void PrintIsDevidedBy3()
         {
-            StringBuilder l_Builder = new StringBuilder();
-            l_Builder.Append($@"Is Number Devided By 3? : ");
+            StringBuilder l_builder = new StringBuilder();
+            l_builder.Append($@"Is Number Devided By 3? : ");
             if (m_InputAsNumber % 3 == 0)
             {
-                l_Builder.Append(@"yes");
+                l_builder.Append(@"yes");
             }
             else
             {
-                l_Builder.Append(@"no ");
-            }
-            Console.WriteLine(l_Builder.ToString());
-        }
-
-        public void PrintHowManyUpperCase()
-        {
-            int l_CounterUpperCase = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                if ('A' <= m_InputAsLetters[i] && m_InputAsLetters[i] <= 'Z')
-                {
-                    l_CounterUpperCase++;
-                }
-            }
-            string l_output = $@"Number Of UpperCase Letters: {l_CounterUpperCase}";
-            Console.WriteLine(l_output);
-        }
-        public void PrintHowManyLowerCase()
-        {
-            int l_CounterLowerCase = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                if ('a' <= m_InputAsLetters[i] && m_InputAsLetters[i] <= 'z')
-                {
-                    l_CounterLowerCase++;
-                }
-            }
-            string l_output = $@"Number Of LowerCase Letters: {l_CounterLowerCase}";
-            Console.WriteLine(l_output);
-        }
-        public void PrintIsInAlphabeticalOrder()
-        {
-            string l_inputAsUpperCase = m_InputAsLetters.ToUpper();
-            char l_PreviousLetter = l_inputAsUpperCase[0];
-            bool l_Flag = true;
-            for (int i = 0; i < 10; i++)
-            {
-                if (!(l_PreviousLetter <= l_inputAsUpperCase[i]))
-                {
-                    l_Flag = false;
-                }
-                else
-                {
-                    l_PreviousLetter = l_inputAsUpperCase[i];
-                }
-            }
-
-            StringBuilder l_builder = new StringBuilder();
-            l_builder.Append(@"Is It in Alphabetical Order: ");
-            if (l_Flag == true)
-            {
-                l_builder.Append(@" yes");
-            }
-            else
-            {
-                l_builder.Append(@" no");
+                l_builder.Append(@"no ");
             }
             Console.WriteLine(l_builder.ToString());
         }
 
+        public void PrintHowManyUpperCase()
+        {
+            int o_counterUpperCase = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if ('A' <= m_InputAsLetters[i] && m_InputAsLetters[i] <= 'Z')
+                {
+                    o_counterUpperCase++;
+                }
+            }
+            string output = $@"Number Of UpperCase Letters: {o_counterUpperCase}";
+            Console.WriteLine(output);
+        }
+        public void PrintHowManyLowerCase()
+        {
+            int o_counterLowerCase = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if ('a' <= m_InputAsLetters[i] && m_InputAsLetters[i] <= 'z')
+                {
+                    o_counterLowerCase++;
+                }
+            }
+            string output = $@"Number Of LowerCase Letters: {o_counterLowerCase}";
+            Console.WriteLine(output);
+        }
+        public void PrintIsInAlphabeticalOrder()
+        {
+            string l_inputAsUpperCase = m_InputAsLetters.ToUpper();
+            char l_previousLetter = l_inputAsUpperCase[0];
+            bool l_flag = true;
+            for (int i = 0; i < 10; i++)
+            {
+                if (!(l_previousLetter <= l_inputAsUpperCase[i]))
+                {
+                    l_flag = false;
+                }
+                else
+                {
+                    l_previousLetter = l_inputAsUpperCase[i];
+                }
+            }
+
+            StringBuilder p_builder = new StringBuilder();
+            p_builder.Append(@"Is It in Alphabetical Order: ");
+            if (l_flag == true)
+            {
+                p_builder.Append(@" yes");
+            }
+            else
+            {
+                p_builder.Append(@" no");
+            }
+            Console.WriteLine(p_builder.ToString());
+        }
+
         public bool IsPalindrome(int i, int j)
         {
-            bool l_result;
+            bool o_result;
             if (i <= j)
             {
                 if (m_InputStr[i] == m_InputStr[j])
                 {
-                    l_result = IsPalindrome(i + 1, j - 1);
+                    o_result = IsPalindrome(i + 1, j - 1);
                 }
                 else
                 {
-                    l_result = false;
+                    o_result = false;
                 }
             }
             else
             {
-                l_result = true;
+                o_result = true;
             }
-            return l_result;
+            return o_result;
         }
         public void PrintIsPalindrome()
         {
             bool l_result = IsPalindrome(0, 9);
-            StringBuilder l_Builder = new StringBuilder();
-            l_Builder.Append(@"Is Number Palindrome: ");
+            StringBuilder o_builder = new StringBuilder();
+            o_builder.Append(@"Is Number Palindrome: ");
             if (l_result == true)
             {
-                l_Builder.Append(@" yes ");
+                o_builder.Append(@" yes ");
             }
             else
             {
-                l_Builder.Append(@" No");
+                o_builder.Append(@" No");
             }
-            Console.WriteLine(l_Builder.ToString());
+            Console.WriteLine(o_builder.ToString());
         }
     }
 }

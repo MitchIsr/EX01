@@ -7,28 +7,28 @@ namespace ProgramStart
     {
         public static void StartProgram()
         {
-            string l_Output = @"Hello, Welcome to Ex01_05 Numbers Statistics
+            string Output = @"Hello, Welcome to Ex01_05 Numbers Statistics
 Please Enter a Number With a length of 7:";
-            Console.WriteLine(l_Output);
-            NumberStatistics l_Numberinput = new NumberStatistics();
-            bool v_isInputValid = false;
-            while (v_isInputValid == false)
+            Console.WriteLine(Output);
+            NumberStatistics i_numberinput = new NumberStatistics();
+            bool isInputValid = false;
+            while (isInputValid == false)
             {
-                string l_input = Console.ReadLine();
+                string i_input = Console.ReadLine();
                 try
                 {
-                    l_Numberinput = NumberStatistics.Parse(l_input);
-                    v_isInputValid = true;
+                    i_numberinput = NumberStatistics.Parse(i_input);
+                    isInputValid = true;
                 }
                 catch (Exception l_invalidinput)
                 {
                     Console.WriteLine(l_invalidinput.Message);
                 }
             }
-            l_Numberinput.PrintCountDigitsBiggerThanFirstDigit();
-            l_Numberinput.PrintHowManyDigitsDevidedBy3Counter();
-            l_Numberinput.PrintDifferenceBetweenMaxDigitAndMinDigit();
-            l_Numberinput.PrintMostCommonDigit();
+            i_numberinput.PrintCountDigitsBiggerThanFirstDigit();
+            i_numberinput.PrintHowManyDigitsDevidedBy3Counter();
+            i_numberinput.PrintDifferenceBetweenMaxDigitAndMinDigit();
+            i_numberinput.PrintMostCommonDigit();
         }
     }
 }
